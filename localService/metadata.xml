@@ -1,0 +1,118 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHR_KPI_APP_SRV" xml:lang="ru" sap:schema-version="1">
+            <EntityType Name="Person" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Year"/>
+                    <PropertyRef Name="Reqid"/>
+                    <PropertyRef Name="Uname"/>
+                </Key>
+                <Property Name="Accessback" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Вернуть" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Accessappr" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Согласовать/Отклонит" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crossflag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Переход" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collapsed" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Вложенность" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Declinecommentary" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Комментарий" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Percentcommentary" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Комментарий" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dirname" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Управление" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Group" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Ид. группы" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgna" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Название ОЕ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parentid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Ид.Родителя" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Year" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Финансовый год" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hierarchylevel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Уровень иерархии" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reqid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Номер заявки" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Табельный номер" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ид.Статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ИмяСотр/Канд" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Podrname" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Подразделение" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stnam" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Наименование статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grade1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Грейд" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plnam" Type="Edm.String" Nullable="false" MaxLength="125" sap:unicode="false" sap:label="Наименование Долж." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grade2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Грейд" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ИмяПользователя" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Procent" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Процент" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToGoals" Relationship="ZHR_KPI_APP_SRV.PersonToGoals" FromRole="FromRole_PersonToGoals" ToRole="ToRole_PersonToGoals"/>
+                <NavigationProperty Name="ToTimeline" Relationship="ZHR_KPI_APP_SRV.PersonToTimeline" FromRole="FromRole_PersonToTimeline" ToRole="ToRole_PersonToTimeline"/>
+            </EntityType>
+            <EntityType Name="Goal" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Purposeid"/>
+                </Key>
+                <Property Name="Reqid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Номер заявки" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Текст" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Purposeid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Номер цели" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Group" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Key"/>
+                </Key>
+                <Property Name="Key" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Ид. объекта" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Collapsed" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Флаг" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Название ОЕ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Описание" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Line" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="From"/>
+                    <PropertyRef Name="To"/>
+                </Key>
+                <Property Name="From" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="От" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="To" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="До" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Timeline" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Username"/>
+                </Key>
+                <Property Name="Fio" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="ФИО" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plnam" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Должность" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Роль" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusText" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Наименование статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Ид.Объекта" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ид.Статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Date" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Дата изменения" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Время изменения" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Commentary" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Комментарий" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ИмяПользователя" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Deleg" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Uname"/>
+                </Key>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ИмяПользователя" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fio" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="ФИО" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="PersonToTimeline" sap:content-version="1">
+                <End Type="ZHR_KPI_APP_SRV.Person" Multiplicity="1" Role="FromRole_PersonToTimeline"/>
+                <End Type="ZHR_KPI_APP_SRV.Timeline" Multiplicity="*" Role="ToRole_PersonToTimeline"/>
+            </Association>
+            <Association Name="PersonToGoals" sap:content-version="1">
+                <End Type="ZHR_KPI_APP_SRV.Person" Multiplicity="1" Role="FromRole_PersonToGoals"/>
+                <End Type="ZHR_KPI_APP_SRV.Goal" Multiplicity="*" Role="ToRole_PersonToGoals"/>
+            </Association>
+            <EntityContainer Name="ZHR_KPI_APP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PersonSet" EntityType="ZHR_KPI_APP_SRV.Person" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GoalSet" EntityType="ZHR_KPI_APP_SRV.Goal" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GroupSet" EntityType="ZHR_KPI_APP_SRV.Group" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="LineSet" EntityType="ZHR_KPI_APP_SRV.Line" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TimelineSet" EntityType="ZHR_KPI_APP_SRV.Timeline" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DelegSet" EntityType="ZHR_KPI_APP_SRV.Deleg" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="PersonToTimelineSet" Association="ZHR_KPI_APP_SRV.PersonToTimeline" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PersonSet" Role="FromRole_PersonToTimeline"/>
+                    <End EntitySet="TimelineSet" Role="ToRole_PersonToTimeline"/>
+                </AssociationSet>
+                <AssociationSet Name="PersonToGoalsSet" Association="ZHR_KPI_APP_SRV.PersonToGoals" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PersonSet" Role="FromRole_PersonToGoals"/>
+                    <End EntitySet="GoalSet" Role="ToRole_PersonToGoals"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZHR_KPI_APP_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZHR_KPI_APP_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

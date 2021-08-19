@@ -1,0 +1,123 @@
+<mvc:View controllerName="ZHR_GRADE_LIST.ZHR_GRADE_LIST.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" displayBlock="true">
+	<semantic:FullscreenPage enableScrolling="true" showFooter="false" id="page">
+		<VBox class="padding">
+			<Title text="{worklistView>/worklistTableTitle}" titleStyle="H3"/>
+			<HBox wrap="Wrap" class="padding-top">
+				<Input width="240px" placeholder="{i18n>tabNumber}" class="padding-right" change="onFilter" data:filter="Pernr" data:op="EQ"/>
+				<Input width="240px" placeholder="{i18n>tableNameColumnTitle}" class="padding-right" change="onFilter" data:filter="Ename"/>
+				<Input width="240px" placeholder="{i18n>position}" class="padding-right" change="onFilter" data:filter="Plnam"/>
+				<Input width="240px" placeholder="{i18n>block}" class="padding-right" change="onFilter" data:filter="Block"/>
+				<Input width="240px" placeholder="{i18n>department}" class="padding-right" change="onFilter" data:filter="Podrname"/>
+				<Input width="240px" placeholder="{i18n>management}" class="padding-right" change="onFilter" data:filter="Dirname"/>
+				<Input width="240px" placeholder="{i18n>sign1}" class="padding-right" change="onFilter" data:filter="Approver1"/>
+				<Input width="240px" placeholder="{i18n>sign2}" class="padding-right" change="onFilter" data:filter="Approver2"/>
+				<Input width="240px" placeholder="{i18n>sign3}" class="padding-right" change="onFilter" data:filter="Approver3"/>
+				<Input width="240px" type="Number" maxLength="3" placeholder="{i18n>procent}" class="padding-right" change="onFilter" data:filter="Procent"
+					data:op="EQ"/>
+				<DatePicker width="224px" placeholder="{i18n>dismissDate}" change="onFilter" data:op="EQ" data:filter="Firedate"/>
+				<HBox class="padding-left">
+					<ComboBox width="102px" placeholder="{i18n>year}" selectedKey="{appView>/presentYear}" change="onFilter" data:filter="Year" data:op="EQ"
+						items="{appView>/years}">
+						<core:Item key="{appView>key}" text="{appView>text}"/>
+					</ComboBox>
+					<Button class="padding-left" text="Применить" press="onApplyFilters"/>
+					<Button class="padding-left padding-right" text="Выгрузить" icon="sap-icon://excel-attachment" press="onExport"/>
+					<BusyIndicator class="padding-top" id="busyIndicator" busy="true" visible="false"/>
+				</HBox>
+			</HBox>
+		</VBox>
+		<t:Table id="table" class="grade_list" width="auto" busy="true" enableBusyIndicator="true" busyIndicatorDelay="500" threshold="10000"
+			visibleRowCountMode="Auto" alternateRowColors="true" rowHeight="36" rows="{ 
+				path: '/PersonSet',
+				filters: [{path: 'Suspended', operator: 'EQ', value1: 'true'}],
+				events: { change: '.onTableChange' } }"
+			showNoData="false" selectionBehavior="RowOnly" selectionMode="Single" rowSelectionChange="onPress"
+			>
+			<t:columns>
+				<t:Column width="90px" hAlign="Center" sortProperty="Pernr">
+					<Text text="{i18n>tabNumber}" textAlign="Center"/>
+					<t:template>
+						<Text text="{Pernr}"/>
+					</t:template>
+				</t:Column>
+				<t:Column sortProperty="Ename" width="250px">
+					<Text textAlign="Center" text="{i18n>tableNameColumnTitle}"/>
+					<t:template>
+						<Text text="{Ename}"/>
+					</t:template>
+				</t:Column>
+				<t:Column sortProperty="Plnam" width="250px">
+					<Text textAlign="Center" text="{i18n>position}"/>
+					<t:template>
+						<Text textAlign="Left" text="{Plnam}"/>
+					</t:template>
+				</t:Column>
+				<t:Column sortProperty="Block" width="250px">
+					<Text textAlign="Center" text="{i18n>block}"/>
+					<t:template>
+						<Text text="{Block}"/>
+					</t:template>
+				</t:Column>
+				<t:Column sortProperty="Podrname" width="250px">
+					<Text textAlign="Center" text="{i18n>department}"/>
+					<t:template>
+						<Text text="{Podrname}"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<Text textAlign="Center" text="{i18n>management}" width="250px"/>
+					<t:template>
+						<Text text="{Dirname}"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="150px" headerSpan="2">
+					<Text text="{i18n>sign1}"/>
+					<t:template>
+						<Text textAlign="Left" text="{Approver1}"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="35px">
+					<t:template>
+						<core:Icon src="{= ${Apprflag1} ? 'sap-icon://accept' : 'sap-icon://cancel'}" color="{= ${Apprflag1} ? '#2b7c2b' : '#ef6b01' }"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="150px" headerSpan="2">
+					<Text textAlign="Center" text="{i18n>sign2}"/>
+					<t:template>
+						<Text textAlign="Left" text="{Approver2}"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="35px">
+					<t:template>
+						<core:Icon src="{= ${Apprflag2} ? 'sap-icon://accept' : 'sap-icon://cancel'}" color="{= ${Apprflag2} ? '#2b7c2b' : '#ef6b01' }"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="150px" headerSpan="2">
+					<Text textAlign="Left" text="{i18n>sign3}"/>
+					<t:template>
+						<Text text="{Approver3}"/>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="35px">
+					<t:template>
+						<core:Icon src="{= ${Apprflag3} ? 'sap-icon://accept' : 'sap-icon://cancel'}" color="{= ${Apprflag3} ? '#2b7c2b' : '#ef6b01' }"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="70px" hAlign="Center">
+					<Text textAlign="Left" text="{i18n>procent}"/>
+					<t:template>
+						<Text text="{Procent}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="100px" hAlign="Center">
+					<Text textAlign="Left" text="{i18n>dismissDate}"/>
+					<t:template>
+						<Text text="{Firedate}"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</semantic:FullscreenPage>
+</mvc:View>

@@ -1,0 +1,154 @@
+.sapFDynamicPageContent,
+.sapFDynamicPageContentFitContainer {
+    padding: 0;
+}
+
+.sapMApp {
+    position: relative !important;
+}
+
+.padding {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.padding-right {
+    padding-right: 1rem !important;
+}
+
+.margin-right {
+    margin-right: 1rem;
+}
+
+.padding-left {
+    padding-left: 1rem !important;
+}
+
+.padding-top {
+    padding-top: 1rem;
+}
+
+.no-padding,
+.no-padding .sapMPanelContent {
+    padding: 0;
+}
+
+.no-padding .sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0;
+}
+
+.title {
+    height: 3rem !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.sapSuiteUiCommonsNetworkNodeDescription {
+    fill: #999 !important;
+}
+
+.sapUiTableTreeIcon,
+.sapUiTableActionIcon {
+    cursor: pointer;
+}
+
+.orange {
+    background-color: #ffd359;
+}
+
+.orangeGray {
+    background-color: #fff7eb;
+}
+
+.orangeTable .sapMListTblHeaderCell {
+    background-color: #ffd359;
+    padding: 1rem;
+}
+
+.orangeTable .sapMListTbl th {
+    border-bottom: 0;
+    background-color: #ffd359;
+}
+
+.orangeTable .sapMLabel {
+    font-weight: bold;
+    color: #333;
+}
+
+.sapUshellShell .sapMPageBgStandard {
+    background-color: #fff;
+}
+
+.gray .sapMPanelContent {
+    background-color: #fafafa;
+}
+
+.sapSuiteUiCommonsTimelineItemShellUser {
+    display: block;
+}
+
+.sapSuiteUiCommonsTimelineItemShellDateTime {
+    margin-top: 0 !important;
+}
+
+.sapSuiteUiCommonsTimelineItemHeader {
+    width: 100%;
+}
+/* Для вывода делегата во вторую строку */
+.sapSuiteUiCommonsTimelineItemShellHdr {
+	white-space: pre-line;
+}
+
+[data-color="Warning"] {
+    color: #ef6b01;
+}
+
+[data-color="Success"] {
+    color: #2b7c2b;
+}
+
+[data-color="Error"] {
+    color: #b00;
+}
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainLeft .sapFDynamicPageTitleMainContent {
+    padding-left: 0px;
+}
+
+.sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnapped>.sapFDynamicPageTitle .sapFDynamicPageTitleMain .sapFDynamicPageTitleMainContent {
+    padding-bottom: 0;
+}
+
+.sapFDynamicPageHeader.sapFDynamicPageHeaderWithContent {
+    padding: 1rem;
+}
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainHeading {
+    min-width: 0;
+}
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainContent {
+    padding: 0;
+}
+
+.sapMTitle {
+    display: block;
+}
+
+.sapFDynamicPageTitle {
+    line-height: 2rem;
+}
+
+.grade_list .sapUiLocalBusyIndicator{
+	max-height: calc(100vh - 151px);
+}
